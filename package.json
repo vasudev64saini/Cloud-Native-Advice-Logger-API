@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A lightweight, backend-only RESTful API built with **Node.js** and **Express**. This project allows authenticated users to generate random pieces of life advice (via an external API) and save them to a personal database with custom notes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitaagamjain/backend-taskboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gitaagamjain/backend-taskboard/issues"
+  },
+  "homepage": "https://github.com/gitaagamjain/backend-taskboard#readme"
+}
