@@ -1,23 +1,30 @@
-# Daily Advice Logger API 
+Dockerized Node.js API on AWS ☁️🐳
 
-A lightweight, backend-only RESTful API built with **Node.js** and **Express**. This project allows authenticated users to generate random pieces of life advice (via an external API) and save them to a personal database with custom notes.
+A DevOps-focused project demonstrating the containerization and cloud deployment of a Node.js REST API. This project showcases practical experience with Docker image optimization, Linux system administration, and AWS EC2 infrastructure.
 
-## Tech Stack
-* **Runtime:** Node.js
-* **Framework:** Express.js
-* **Database:** SQLite (via Sequelize ORM)
-* **Authentication:** JSON Web Tokens (JWT) & bcryptjs
-* **External API:** [Advice Slip JSON API](https://api.adviceslip.com/) (using Axios)
+🏗️ Infrastructure & Tech Stack
 
-## Features
-* **User Authentication:** Secure registration and login using hashed passwords and JWT.
-* **Protected Routes:** Middleware to ensure only authorized users can access their data.
-* **External API Integration:** Automatically fetches random advice on POST requests.
-* **CRUD Operations:** Users can create, read, and delete their saved advice logs.
+Containerization: Docker (Optimized Alpine Linux base images)
+Cloud Provider: AWS (Elastic Compute Cloud - EC2)
+Networking: AWS Security Groups (Port mapping & Inbound routing)
+OS / Environment: Ubuntu Linux
+Application Layer: Node.js, Express, SQLite, JWT Authentication
+🚀 DevOps Implementation Details
 
-## How to Run Locally
+1. Docker Optimization
 
-1. Clone the repository and run `npm install`.
-2. Run `node server.js` to start the server (runs on port 3000).
-3. The SQLite database file will automatically generate on the first run.
-4. Use Postman or ThunderClient to interact with the API endpoints.
+The application is containerized using a multi-layer Dockerfile. To reduce the attack surface and optimize deployment speed, the image utilizes node:18-alpine. This reduced the final image footprint to ~66MB, ensuring rapid artifact pushing and pulling.
+
+2. Cloud Deployment (AWS EC2)
+
+The container is hosted on an AWS EC2 instance running Ubuntu.
+
+Security: Configured AWS Security Groups to restrict traffic, only allowing inbound HTTP traffic on specific application ports (e.g., Port 8000) and SSH (Port 22) for secure administrative access.
+Port Mapping: Utilized Docker's network isolation to map the host EC2 port 8000 to the internal container port 3000.
+⚙️ How to Deploy
+
+To replicate this deployment on any Linux server:
+
+Clone the repository:
+    git clone [https://github.com/gitaagamjain/dockerized-node-api-aws.git](https://github.com/gitaagamjain/dockerized-node-api-aws.git)
+    cd dockerized-node-api-aws
